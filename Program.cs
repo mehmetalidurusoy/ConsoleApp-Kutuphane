@@ -39,12 +39,12 @@ while (true)
     {
         Console.Clear();
         menuOge = ["Başlığa Göre", "Yazara Göre", "Türe Göre", "Yayın Yılına Göre"];
-        secim = _menu.olustur("Arama yaparken kullanacağınız işlemi seçin", menuOge, [Menu.Renk.Mavi, Menu.Renk.Kırmızı], 1);
+        int _secim = _menu.olustur("Arama yaparken kullanacağınız işlemi seçin", menuOge, [Menu.Renk.Mavi, Menu.Renk.Kırmızı], 1);
 
         Console.Write("Kriteri Girin => ");
         string ara = $"{Console.ReadLine()}";
 
-        switch (secim)
+        switch (_secim)
         {
             case 1: kutuphane.BasligaGoreAra(ara).ForEach(k => _menu.MesajYaz(k.ToString(), ConsoleColor.DarkRed)); break;
             case 2: kutuphane.YazaraGoreAra(ara).ForEach(k => _menu.MesajYaz(k.ToString(), ConsoleColor.DarkRed)); break;
